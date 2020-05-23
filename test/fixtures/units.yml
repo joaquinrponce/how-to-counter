@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  attack: 1
+  armor: 1
+  pierce_armor: 1
+  range: 1
+  accuracy: 1
+  hp: 1
+
+two:
+  name: MyString
+  description: MyString
+  attack: 1
+  armor: 1
+  pierce_armor: 1
+  range: 1
+  accuracy: 1
+  hp: 1
