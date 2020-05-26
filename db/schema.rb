@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_002440) do
+ActiveRecord::Schema.define(version: 2020_05_25_230953) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -38,17 +38,27 @@ ActiveRecord::Schema.define(version: 2020_05_23_002440) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "direct_counters", force: :cascade do |t|
+    t.integer "countered_unit_id"
+    t.integer "counter_unit_id"
+    t.text "description"
+  end
+
+  create_table "tactical_counters", force: :cascade do |t|
+    t.integer "countered_unit_id"
+    t.integer "counter_unit_id"
+    t.text "description"
+  end
+
   create_table "units", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.integer "attack"
     t.integer "armor"
     t.integer "pierce_armor"
     t.integer "range"
     t.integer "accuracy"
     t.integer "hp"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

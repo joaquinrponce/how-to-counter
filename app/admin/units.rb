@@ -20,12 +20,38 @@ ActiveAdmin.register Unit do
     selectable_column
     id_column
     column :name
-    column :attack
-    column :armor
-    column :pierce_armor
-    column :range
-    column :accuracy
-    column :hp
+    column "Direct Counters" do |unit|
+      units = []
+      unit.direct_counters.each do |rel|
+        return if rel == nil
+        units.push(rel.counter_unit)
+      end
+      units
+    end
+    column "Direct Countered" do |unit|
+      units = []
+      unit.direct_countered.each do |rel|
+        return if rel == nil
+        units.push(rel.countered_unit)
+      end
+      units
+    end
+    column "Tactical Counters" do |unit|
+      units = []
+      unit.tactical_counters.each do |rel|
+        return if rel == nil
+        units.push(rel.counter_unit)
+      end
+      units
+    end
+    column "Tactical Countered" do |unit|
+      units = []
+      unit.tactical_countered.each do |rel|
+        return if rel == nil
+        units.push(rel.countered_unit)
+      end
+      units
+    end
     actions
   end
 
