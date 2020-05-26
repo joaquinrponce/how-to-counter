@@ -4,34 +4,40 @@ import UnitDisplay from './unitDisplay'
 export default class UnitInfo extends Component {
   constructor(props) {
     super(props)
-    this.state = {units: []}
+    this.state = {unit: null}
+    this.getData = this.getData.bind(this)
   }
 
-  componentDidMount () {
-    fetch(`api/units`).then(response => 
+  getData() {
+    fetch(`api/units/${this.props.id}`).then(response => 
       response.json()).then(data => {
         console.log(data)
-        this.setState({units: data})
-      }
+        this.setState({unit: data})
+      } 
     )
   }
 
-  async getData() {
-    let response = await fetch(`/api/units`)
-    let data = await response.json()
-    return data
+  componentDidMount() {
+    this.getData()
   }
-  renderUnit (unit) {
-    return <UnitDisplay key={unit.id} unit={unit}/>
+
+  componentDidUpdate (prevProps, prevState) {
+    if (this.props !== prevProps) {
+      this.getData()
+    }
   }
+
   render () {
-    let units = []
-     this.state.units.forEach( unit => 
-      {
-      units.push(this.renderUnit(unit))
-    }) 
-    return (
-      <div>{units}</div>
-    )
+    if (!this.state.unit) {
+      return (
+        <div>Loading data...</div>
+      )
+    } else {
+      return (
+        <div className='unit-info container'>
+          <UnitDisplay key={this.state.unit.id} unit={this.state.unit}/>
+        </div>
+      )
+    }
   }
 }
