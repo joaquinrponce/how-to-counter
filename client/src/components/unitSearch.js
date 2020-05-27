@@ -27,7 +27,8 @@ export default class UnitSearch extends Component {
 
   render () {
       return (
-        <div className='search-select'>
+        <div className='search container'>
+          <div className='search-header'>Select or search for a unit to get information on it.</div>
           <Select onChange={this.handleChange} options={this.state.selectOptions}/>
         </div>
       )

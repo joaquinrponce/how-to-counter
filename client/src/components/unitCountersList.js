@@ -21,14 +21,12 @@ export default class UnitCountersList extends Component {
   render () {
     let header = this.props.counters ? 'Weak Against' : 'Strong Against'
     return (
-      <div className='unit-info unit-counters container'>
-        <div className='unit-info unit-counters counters-wrapper'>
-          <div className='unit-info container header'>{header}</div>
-          <div className='unit-info header-small'>Direct Counters</div>
-          <div className='unit-info unit-direct-counters'>{this.renderDirectCounters()}</div>
-          <div className='unit-info header-small'>Tactical Counters</div>
-          <div className='unit-info unit-tactical-counters'>{this.renderTacticalCounters()}</div>
-        </div>
+      <div className='unit-counters-list container'>
+        <div className='header'>{header}</div>
+        <div className='header-small'>Direct Counters</div>
+        <div className='unit-counters'>{this.renderDirectCounters()}</div>
+        <div className='header-small'>Tactical Counters</div>
+        <div className='unit-counters'>{this.renderTacticalCounters()}</div>
       </div>
     )
   }

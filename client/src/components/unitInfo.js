@@ -33,9 +33,7 @@ export default class UnitInfo extends Component {
       )
     } else {
       return (
-        <div className='unit-info container'>
           <UnitDisplay key={this.state.unit.id} unit={this.state.unit}/>
-        </div>
       )
     }
   }

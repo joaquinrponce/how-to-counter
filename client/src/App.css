@@ -1,124 +1,67 @@
 .container {
   display: flex;
-}
-
-.container-main {
   flex-direction: column;
-}
-
-.search-header {
-  margin-top: 2vh;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.search-select {
-  margin: 10px;
-  width: 40vh;
+  margin: 5px;
 }
 
 .unit-info {
-  flex-direction: column;
-}
-
-.unit-display {
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-.unit-info {
-  text-align: center;
-}
-
-.unit-info-main {
-  padding: 5px;
-  margin: 2vh;
-  flex-direction: row;
-  flex-basis: 100%;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid rgb(205, 205, 205);
+  border: 1px solid rgb(225, 225, 225);
   border-radius: 5px;
+  padding: 5px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.unit-info-main div {
-  width: 33%;
-  text-align: center;
+.unit-info div {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .unit-name-picture {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.unit-picture {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.unit-stats {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.unit-info-counters {
-  border: 1px solid rgb(205, 205, 205);
+.unit-counter-columns {
+  border: 1px solid rgb(225, 225, 225);
   border-radius: 5px;
-  padding: 5px;
-  margin: 2vh;
   flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: space-between;
 }
 
-.unit-direct-counters, .unit-tactical-counters {
-  display: flex;
+.unit-counters-list {
   align-items: center;
-  align-self: center;
-  width: 80%;
+  width: 50%;
 }
 
 .unit-counters {
-  flex: 1 1 0px;
+  width: 60%;
 }
 
 .unit-counter {
   flex-direction: row;
+  padding: 5px;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 5px;
+  background: rgb(250, 250, 250);
 }
 
 .unit-counter-description {
-  display: flex;
-  flex-direction: column;
-  justify-content:  flex-start;
+  margin: 0px;
   margin-left: 5px;
-}
-
-.unit-counter-description div {
-  text-align: justify;
-}
-
-.unit-counter img {
-  float: left;
-}
-
-.header {
-  font-weight: bold;
-  font-size: 18pt;
-}
-
-.header-small {
-  font-weight: bold;
-  font-size: 14pt;
 }
 .unit-name {
   font-weight: bold;
 }
 
-.unit-info span {
-  font-weight: bold
+.header {
+  font-weight: bold;
+  font-size: 16pt;
+}
+
+.header-small {
+  font-weight: bold;
+  font-size: 13pt;
 }
