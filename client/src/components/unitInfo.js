@@ -11,7 +11,6 @@ export default class UnitInfo extends Component {
   getData() {
     fetch(`api/units/${this.props.id}`).then(response => 
       response.json()).then(data => {
-        console.log(data)
         this.setState({unit: data})
       } 
     )
