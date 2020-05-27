@@ -7,7 +7,8 @@ export default class UnitStats extends Component {
       <div className='unit-info unit-stats'>
       <div className='unit-info unit-stats header'>Stats</div>
       <div className='unit-info unit-attack'><span>Attack:</span> {unit.attack}</div>
-      <div className='unit-info unit-armor'><span>Armor:</span> {unit.armor}</div>
+      <div className='unit-info unit-armor'><span>Melee Armor:</span> {unit.armor}</div>
+      <div className='unit-info unit-pierce-armor'><span>Pierce Armor:</span> {unit.pierce_armor}</div>
       <div className='unit-info unit-hp'><span>HP:</span> {unit.hp}</div>
       </div>
     )

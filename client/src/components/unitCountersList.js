@@ -19,11 +19,13 @@ export default class UnitCountersList extends Component {
   render () {
     return (
       <div className='unit-info unit-counters container'>
-        <div className='unit-info container header'>Weak Against</div>
-          <div className='unit-info header'>Direct Counters</div>
+        <div className='unit-info unit-counters counters-wrapper'>
+          <div className='unit-info container header'>Weak Against</div>
+          <div className='unit-info header-small'>Direct Counters</div>
           <div className='unit-info unit-direct-counters'>{this.renderDirectCounters()}</div>
-          <div className='unit-info header'>Tactical Counters</div>
+          <div className='unit-info header-small'>Tactical Counters</div>
           <div className='unit-info unit-tactical-counters'>{this.renderTacticalCounters()}</div>
+        </div>
       </div>
     )
   }

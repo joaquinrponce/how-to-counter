@@ -18,9 +18,11 @@ class App extends Component {
   render() {
     if (!this.state.id || this.state.id === 0) {
       return (
-        <div>
-          Search for a unit below to get information on them.
-          <UnitSearch submit={this.submit}/>
+        <div className="container container-main">
+          <div className="search-header container">
+            Search for a unit below to get information on them.
+            <UnitSearch submit={this.submit}/>
+          </div>
         </div>
       )
     } else {
