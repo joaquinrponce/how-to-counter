@@ -22,10 +22,12 @@ export default class UnitBuilding extends Component {
       case 'Monastery':
         buildingUrl += 'monastery.png'
         break;
+      default:
+        buildingUrl += 'castle.png'
     }
     return( 
       <div className='unit-building container'>
-        <img className='building-picture' width='35px' height='35px' src={buildingUrl}></img>
+        <img alt={this.props.building} className='building-picture' width='35px' height='35px' src={buildingUrl}></img>
         <div className='building-name'>{this.props.building}</div>
       </div>
     )

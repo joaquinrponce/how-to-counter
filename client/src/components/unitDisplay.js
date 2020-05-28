@@ -14,7 +14,7 @@ export default class UnitDisplay extends Component {
       <div className='unit-display container'>
         <div className='unit-info container'>
             <div className='unit-name-picture'>
-              <UnitName name={this.props.unit.name}/>
+              <UnitName name={this.props.unit.name} id={this.props.unit.id}/>
               <UnitPicture size='big' url={this.props.unit.picture_url}/>
             </div>
           <UnitCivilizationsList civs={this.props.unit.civilizations}/>

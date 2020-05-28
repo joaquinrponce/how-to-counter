@@ -9,7 +9,7 @@ export default class UnitCounter extends Component {
       <div className='unit-counter container'>
         <UnitPicture size='small' url={unit.picture_url}/>
         <div className='unit-counter-description container'>
-          <UnitName name={unit.name}/>
+          <UnitName name={unit.name} id={unit.id}/>
           <div className='counter-description'>
             {this.props.counter.description}
           </div>

@@ -59,8 +59,14 @@ img {
 
 .unit-name {
   font-weight: bold;
+  color: black;
+  text-decoration: underline;
 }
 
+.unit-name:hover {
+  color: rgb(0, 125, 185);
+  cursor: pointer;
+}
 
 .unit-building-description {
   align-items: flex-start;

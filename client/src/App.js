@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import UnitInfo from './components/unitInfo'
 import UnitSearch from './components/unitSearch'
+import { UnitID } from './components/UnitIDContext.js'
 import './App.css';
 
 class App extends Component {
   constructor(){
     super()
-    this.state = {id: null}
     this.submit = this.submit.bind(this)
+    this.state = {id: null, submit: this.submit}
   }
 
   submit(id) {
-    this.setState({id: id})
+    console.log(id)
+    this.setState({id: id, submit: this.submit})
   }
 
   render() {
@@ -23,10 +25,12 @@ class App extends Component {
       )
     } else {
       return (
+        <UnitID.Provider value={this.state}>
         <div className="container container-main">
           <UnitSearch submit={this.submit}/>
           <UnitInfo id={this.state.id}/>
         </div>
+        </UnitID.Provider>
       );
     }
   }

@@ -1,5 +1,5 @@
 ActiveAdmin.register Unit do
-  permit_params :name, :description, :attack, :armor, :pierce_armor, :range, :accuracy, :hp, :civilizations, :picture_url
+  permit_params :name, :description, :attack, :armor, :pierce_armor, :range, :accuracy, :hp, :picture_url, civilizations_attributes: [:name, :_create, :_update]
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
