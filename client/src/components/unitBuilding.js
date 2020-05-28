@@ -19,6 +19,9 @@ export default class UnitBuilding extends Component {
       case 'Siege Workshop':
         buildingUrl += 'workshop.png'
         break;
+      case 'Monastery':
+        buildingUrl += 'monastery.png'
+        break;
     }
     return( 
       <div className='unit-building container'>

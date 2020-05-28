@@ -10,7 +10,6 @@ import UnitBuilding from './unitBuilding.js'
 
 export default class UnitDisplay extends Component {
   render () {
-    console.log(this.props.unit)
     return (
       <div className='unit-display container'>
         <div className='unit-info container'>

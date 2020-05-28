@@ -11,7 +11,6 @@ class App extends Component {
   }
 
   submit(id) {
-    console.log(this.state.id)
     this.setState({id: id})
   }
 
