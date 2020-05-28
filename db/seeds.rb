@@ -17,8 +17,6 @@ end
 elite_skirmisher = Unit.create(
   name: 'Elite Skirmisher',
   description: 'An Archer unit with high pierce armor and an attack bonus against Archers and the Spearman line. Has a minimum range and slow attack speed.',
-  attack: 3,
-  armor: 0,
   building: 'Archery Range',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Elite+Skirmisher.jpg"
 )
@@ -26,8 +24,6 @@ elite_skirmisher = Unit.create(
 arbalester = Unit.create(
   name: 'Arbalester',
   description: 'Main Archer unit. Weak to skirmishers. Good against infantry.',
-  attack: 3,
-  armor: 0,
   building: 'Archery Range',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Arbalester.jpg"
 )
@@ -94,7 +90,7 @@ civs = Civilization.all
 paladin.civilizations = Civilization.where(:name => ['Byzantines', 'Celts', 'Cumans', 'Franks', 'Huns', 'Lithuanians', 'Magyars', 'Persians', 'Spanish', 'Teutons'])
 paladin.save
 
-elite_skirmisher.civiliizations = Civilization.where.not(:name => ['Turks'])
+elite_skirmisher.civilizations = Civilization.where.not(:name => ['Turks'])
 elite_skirmisher.save
 
 arbalester.civilizations = Civilization.where(:name => ['Aztecs', 'Britons', 'Byzantines', 'Chinese', 'Ethiopians', 'Incas', 'Italians', 'Japanese', 'Khmer', 'Koreans', 'Magyars', 'Malay', 'Malians', 'Mayans', 'Mongols', 'Portuguese', 'Saracens', 'Vietnamese', 'Vikings'])
@@ -108,6 +104,9 @@ siege_onager.save
 
 teutonic.civilizations = Civilization.where(:name => ['Teutons'])
 teutonic.save
+
+monk.civilizations = civs
+monk.save
 
 
 

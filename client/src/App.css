@@ -16,17 +16,53 @@ img {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
-
-.unit-info div {
-  flex: 1;
+  min-height: 30vh;
 }
 
 .unit-name-picture {
+  flex-grow: .3;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+
+.unit-building-description {
+  flex: 1;
+  align-items: flex-start;
+}
+
+.unit-building {
+  flex-direction: row;
+  float: left;
+  margin-left: 0;
+  align-items: center;
+  font-weight: bold;
+}
+
+.building-name {
+  margin-left: 5px;
+}
+
+.civilization-list {
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-right: 15px;
+}
+
+.civilization {
+  margin: 0;
+  flex-direction: row;
+  min-width: 80px;
+  align-items: center;
+}
+
+.civilization-name {
+  font-size: 8pt;
+  color: rgb(95, 95, 95)
+}
+
 
 .unit-counter-columns {
   border: 1px solid rgb(225, 225, 225);
@@ -66,41 +102,6 @@ img {
 .unit-name:hover {
   color: rgb(0, 125, 185);
   cursor: pointer;
-}
-
-.unit-building-description {
-  align-items: flex-start;
-}
-
-.unit-building {
-  flex-direction: row;
-  float: left;
-  margin-left: 0;
-  align-items: center;
-  font-weight: bold;
-}
-
-.building-name {
-  margin-left: 5px;
-}
-
-
-.civilization-list {
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding-right: 15px;
-}
-
-.civilization {
-  margin: 0;
-  flex-direction: row;
-  min-width: 80px;
-  align-items: center;
-}
-
-.civilization-name {
-  font-size: 8pt;
-  color: rgb(95, 95, 95)
 }
 
 
