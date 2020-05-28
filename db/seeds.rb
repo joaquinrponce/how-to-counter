@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
-civilizations = ['Aztecs', 'Berbers', 'Britons',' Bulgarians', 'Burmese', 'Byzantines', 'Celts', 'Chinese', 'Cumans', 'Ethiopians', 'Franks', 'Goths', 'Huns', 'Incas', 'Indians', 'Italians', 'Japanese', 'Khmer', 'Koreans', 'Lithuanians', 'Magyars', 'Malay', 'Malians', 'Mayans', 'Mongols', 'Persians', 'Portuguese', 'Saracens', 'Slavs', 'Spanish', 'Tatars', 'Teutons']
+civilizations = ['Aztecs', 'Berbers', 'Britons', 'Bulgarians', 'Burmese', 'Byzantines', 'Celts', 'Chinese', 'Cumans', 'Ethiopians', 'Franks', 'Goths', 'Huns', 'Incas', 'Indians', 'Italians', 'Japanese', 'Khmer', 'Koreans', 'Lithuanians', 'Magyars', 'Malay', 'Malians', 'Mayans', 'Mongols', 'Persians', 'Portuguese', 'Saracens', 'Slavs', 'Spanish', 'Tatars', 'Teutons']
 
 civilizations.each do |civ|
-  url = "https://how-to-counter.s3.us-east-2.amazonaws.com/units/civilizations/#{civ.downcase}.jpg"
+  url = "https://how-to-counter.s3.us-east-2.amazonaws.com/units/civilizations/#{civ.downcase}.png"
   Civilization.create(name: civ, picture_url: url)
 end
 
@@ -71,4 +71,14 @@ halberdier.direct_counters.create(counter_unit: arbalest, description: "The Arba
 halberdier.tactical_counters.create(counter_unit: teutonic, description: "The Teutonic Knight's high attack and melee armor allows it to quickly deal with Halberdiers, with a single Teutonic Knight being able to wipe out many Halberdiers at once.")
 
 siege_onager.tactical_counters.create(counter_unit: paladin, description: "The Paladin's quick movement and high attack allows them to engage and dispatch of Siege Onagers with ease.")
+
+units = Unit.all
+civs = Civilization.all
+
+units.each do |unit|
+  civs.each do |civ|
+    unit.civilizations << civ
+  end
+end
+
 
