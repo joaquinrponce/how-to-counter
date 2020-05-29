@@ -1,5 +1,5 @@
 ActiveAdmin.register Unit do
-  permit_params :name, :description, :attack, :advice, :armor, :pierce_armor, :range, :accuracy, :hp, :picture_url, civilizations_attributes: [:name, :_create, :_update]
+  permit_params :name, :description, :attack, :advice, :armor, :pierce_armor, :range, :accuracy, :hp, :picture_url, civilizations_attributes: [:id, :name, :_create, :_update]
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -56,17 +56,11 @@ ActiveAdmin.register Unit do
   end
 
   form do |f|
-    f.inputs do
-      f.input :civilization_ids, :label => 'Civilization', :as => :select, :collection => Civilization.all.map{|civ| ["#{civ.name}", civ.id]}
-      f.input :name
-      f.input :description
-      f.input :advice
-      f.input :picture_url
-      f.input :attack
-      f.input :armor
-      f.input :pierce_armor
-      f.input :hp
+    inputs do
+      f.inputs
+      f.input :civilization_ids, as: :tags, collection: Civilization.all, display_name: :name
     end
+    f.actions
   end
 
 end
