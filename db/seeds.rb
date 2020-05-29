@@ -173,7 +173,7 @@ militia = Unit.create(
   name: 'Militia',
   description: 'Cheap and quick-to-train infantry. A very basic military unit.',
   building: 'Barracks',
-  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Militia.jpg",
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/barracks/Militia.jpg",
   hp: 40,
   attack: 4,
   armor: 0,
