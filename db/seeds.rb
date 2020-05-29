@@ -58,6 +58,10 @@ skirmisher = Unit.create(
   description: 'An Archer unit with high pierce armor and an attack bonus against Archers and the Spearman line. Has a minimum range and slow attack speed.',
   building: 'Archery Range',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Skirmisher.jpg",
+  hp: 30,
+  attack: 2,
+  armor: 0,
+  pierce_armor: 3,
   upgrade_tree: skirmisher_tree
 )
 
@@ -69,6 +73,10 @@ elite_skirmisher = Unit.create(
   description: 'An Archer unit with high pierce armor and an attack bonus against Archers and the Spearman line. Has a minimum range and slow attack speed.',
   building: 'Archery Range',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Elite+Skirmisher.jpg",
+  hp: 35,
+  attack: 3,
+  armor: 0,
+  pierce_armor: 4,
   upgrade_tree: skirmisher_tree
 )
 
@@ -452,6 +460,7 @@ camel = Unit.create(
 )
 
 camel.civilizations = Civilization.where(:name => ['Berbers', 'Byzantines', 'Chinese', 'Cumans', 'Ethiopians', 'Indians', 'Malians', 'Mongols', 'Persians', 'Saracens', 'Tatars', 'Turks'])
+camel.save
 
 
 heavy_camel = Unit.create(
@@ -467,7 +476,8 @@ heavy_camel = Unit.create(
 )
 
 
-camel.civilizations = Civilization.where(:name => ['Berbers', 'Byzantines', 'Chinese', 'Ethiopians', 'Indians', 'Malians', 'Mongols', 'Persians', 'Saracens', 'Tatars', 'Turks'])
+heavy_camel.civilizations = Civilization.where(:name => ['Berbers', 'Byzantines', 'Chinese', 'Ethiopians', 'Indians', 'Malians', 'Mongols', 'Persians', 'Saracens', 'Tatars', 'Turks'])
+heavy_camel.save
 
 #siege workshop
 
@@ -563,7 +573,7 @@ siege_onager.save
 
 
 scorpion = Unit.create(
-  name: 'Socrpion',
+  name: 'Scorpion',
   description: 'A slow-moving siege unit with a minimum range. Launches a projectile that damages any units it passes through. Good against grouped enemies.',
   building: 'Siege Workshop',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/workshop/Scorpion.jpg",
@@ -578,7 +588,7 @@ scorpion.civilizations = civs
 scorpion.save
 
 heavy_scorpion = Unit.create(
-  name: 'Heavy Socrpion',
+  name: 'Heavy Scorrpion',
   description: 'A slow-moving siege unit with a minimum range. Launches a projectile that damages any units it passes through. Good against grouped enemies.',
   building: 'Siege Workshop',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/workshop/Heavy+Scorpion.jpg",

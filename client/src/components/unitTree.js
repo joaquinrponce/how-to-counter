@@ -14,7 +14,7 @@ export default class UnitTree extends Component {
       </div>)
     })
     return (
-      <div>
+      <div className='unit-tree-main'>
         <div className='header'>
           {this.props.tree.name}
         </div>

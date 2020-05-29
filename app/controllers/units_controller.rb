@@ -1,7 +1,7 @@
 class UnitsController < ApiController
 
   def index
-    @units = Unit.all
+    @units = Unit.all.order(id: :asc)
     render json: @units
   end
 
@@ -18,7 +18,7 @@ class UnitsController < ApiController
   end
 
   def search
-    @units = Unit.all
+    @units = Unit.all.order(id: :asc)
     if search_params[:building]
       @units = @units.where(building: search_params[:building])
     end

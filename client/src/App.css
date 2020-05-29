@@ -29,7 +29,7 @@ img {
 }
 
 .unit-name-picture {
-  flex-grow: .3;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,7 +74,6 @@ img {
   flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-right: 15px;
 }
 
 .civilization {
@@ -103,7 +102,7 @@ img {
 }
 
 .unit-counters {
-  width: 60%;
+  width: 80%;
 }
 
 .unit-counter {
@@ -141,7 +140,7 @@ img {
 
 .unit-individual .unit-name-picture {
   flex-grow: 0;
-  min-width: 150px;
+  min-width: 20%;
 }
 
 .unit-individual .unit-description {
@@ -159,6 +158,10 @@ img {
   font-weight: bold;
   width: 25px;
   height: 20px;
+}
+
+.unit-tree-main {
+  margin-top: 5px;
 }
 
 .unit-tree-element {

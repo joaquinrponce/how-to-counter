@@ -28,7 +28,7 @@ export default class UnitDisplay extends Component {
           <UnitStats unit={this.props.unit}/>
         </div>
         <div className='unit-counter-columns container'>
-        <UnitAdvice/>
+          <UnitAdvice advice={this.props.unit.advice}/>
           <UnitCountersList counters={true}  direct_counters={this.props.unit.direct_counters} tactical_counters={this.props.unit.tactical_counters}/>
           <UnitCountersList counters={false} direct_counters={this.props.unit.direct_countered} tactical_counters={this.props.unit.tactical_countered}/>
         </div>
