@@ -31,7 +31,7 @@ cavarcher_tree = UpgradeTree.create(name: 'Cavalry Archer-line')
 
 militia_tree = UpgradeTree.create(name: 'Militia-line')
 spearman_tree = UpgradeTree.create(name: 'Spearman-line')
-eagle_tree = UpgradeTree.create('Name: Eagle-line')
+eagle_tree = UpgradeTree.create(name: 'Eagle-line')
 
 
 #stable
@@ -46,6 +46,9 @@ mangonel_tree = UpgradeTree.create(name: 'Mangonel-line')
 ram_tree = UpgradeTree.create(name: 'Ram-line')
 scorpion_tree = UpgradeTree.create(name: 'Scorpion-line')
 
+#unique
+
+teutonic_tree = UpgradeTree.create(name: 'Teutonic Knight')
 
 #create every unit individually
 
@@ -591,7 +594,7 @@ heavy_scorpion.save
 
 bombard_cannon =  Unit.create(
   name: 'Bombard Cannon',
-  description: 'A slow-moving siege unit with a long-distance attack. Excellent against buildings. Slightly weaker than the Trebuchet, but much more mobile, and more effective against military units.'
+  description: 'A slow-moving siege unit with a long-distance attack. Excellent against buildings. Slightly weaker than the Trebuchet, but much more mobile, and more effective against military units.',
   building: 'Siege Workshop',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/workshop/Bombard+Cannon.jpg",
   hp: 80,
