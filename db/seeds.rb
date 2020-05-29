@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 civilizations = ['Aztecs', 'Berbers', 'Britons', 'Bulgarians', 'Burmese', 'Byzantines', 'Celts', 'Chinese', 'Cumans', 'Ethiopians', 'Franks', 'Goths', 'Huns', 'Incas', 'Indians', 'Italians', 'Japanese', 'Khmer', 'Koreans', 'Lithuanians', 'Magyars', 'Malay', 'Malians', 'Mayans', 'Mongols', 'Persians', 'Portuguese', 'Saracens', 'Slavs', 'Spanish', 'Tatars', 'Teutons', 'Turks']
 
@@ -117,17 +117,31 @@ paladin.direct_counters.create(counter_unit: halberdier, description: "The Halbe
 
 paladin.tactical_counters.create(counter_unit: monk, description: "Monks can easily convert enemy Paladins, which leaves the opponent with one less unit in their army, while having to fight one additional unit. Against large numbers of enemies, Monks are not as effective, and become harder to micro-manage.")
 
-knight.direct_counters.create(counter_unit: halberdier, description: "The Halberdier possesses a strong attack bonus against cavalry, although still losing in a one-to-one fight with a Paladin.")
+knight.direct_counters.create(counter_unit: halberdier, description: "The Halberdier possesses a strong attack bonus against cavalry, although still losing in a one-to-one fight with a Knight.")
 
-cavalier.tactical_counters.create(counter_unit: monk, description: "Monks can easily convert enemy Paladins, which leaves the opponent with one less unit in their army, while having to fight one additional unit. Against large numbers of enemies, Monks are not as effective, and become harder to micro-manage.")
+knight.tactical_counters.create(counter_unit: monk, description: "Monks can easily convert enemy Knights, which leaves the opponent with one less unit in their army, while having to fight one additional unit. Against large numbers of enemies, Monks are not as effective, and become harder to micro-manage.")
 
-arbalester.direct_counters.create(counter_unit: elite_skirmisher, description: "The Elite Skimisher's high pierce armor and attack bonus against Archers makes it a great counter to Arbalesters.")
+cavalier.direct_counters.create(counter_unit: halberdier, description: "The Halberdier possesses a strong attack bonus against cavalry, although still losing in a one-to-one fight with a Cavalier.")
 
-archer.direct_counters.create(counter_unit: elite_skirmisher, description: "The Elite Skimisher's high pierce armor and attack bonus against Archers makes it a great counter to Arbalesters.")
+cavalier.tactical_counters.create(counter_unit: monk, description: "Monks can easily convert enemy Cavalier, which leaves the opponent with one less unit in their army, while having to fight one additional unit. Against large numbers of enemies, Monks are not as effective, and become harder to micro-manage.")
 
-crossbowman.direct_counters.create(counter_unit: elite_skirmisher, description: "The Elite Skimisher's high pierce armor and attack bonus against Archers makes it a great counter to Arbalesters.")
+arbalester.direct_counters.create(counter_unit: elite_skirmisher, description: "The Elite Skirmisher's high pierce armor and attack bonus against Archers makes it a great counter to Arbalesters.")
+
+arbalester.direct_counters.create(counter_unit: skirmisher, description: "The Skirmisher's high pierce armor and attack bonus against Archers makes it a great counter to Arbalesters.")
+
+archer.direct_counters.create(counter_unit: elite_skirmisher, description: "The Elite Skirmisher's high pierce armor and attack bonus against Archers makes it a great counter to them.")
+
+archer.direct_counters.create(counter_unit: skirmisher, description: "The Skirmisher's high pierce armor and attack bonus against Archers makes it a great counter tot them.")
+
+crossbowman.direct_counters.create(counter_unit: elite_skirmisher, description: "The Elite Skirmisher's high pierce armor and attack bonus against Archers makes it a great counter to Crossbowmen.")
+
+crossbowman.direct_counters.create(counter_unit: skirmisher, description: "The Skirmisher's high pierce armor and attack bonus against Archers makes it a great counter to Crossbowmen.")
 
 arbalester.tactical_counters.create(counter_unit: siege_onager, description: "The Siege Onager's high damage area-of-effect attack allows it to easily destroy clumps of ranged units, although untis with higher range or good micro management can still avoid such attacks.")
+
+archer.tactical_counters.create(counter_unit: siege_onager, description: "The Siege Onager's high damage area-of-effect attack allows it to easily destroy clumps of ranged units, although untis with higher range or good micro management can still avoid such attacks.")
+
+crossbowman.tactical_counters.create(counter_unit: siege_onager, description: "The Siege Onager's high damage area-of-effect attack allows it to easily destroy clumps of ranged units, although untis with higher range or good micro management can still avoid such attacks.")
 
 elite_skirmisher.tactical_counters.create(counter_unit: siege_onager, description: "The Siege Onager's high damage area-of-effect attack allows it to easily destroy clumps of ranged units, although untis with higher range or good micro management can still avoid such attacks.")
 
