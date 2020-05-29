@@ -7,6 +7,7 @@ import UnitPicture from './unitPicture.js'
 import UnitCivilizationsList from './unitCivilizationsList.js'
 import UnitBuilding from './unitBuilding.js'
 import UnitTree from './unitTree.js'
+import UnitAdvice from './unitAdvice.js'
 
 
 export default class UnitDisplay extends Component {
@@ -27,6 +28,7 @@ export default class UnitDisplay extends Component {
           <UnitStats unit={this.props.unit}/>
         </div>
         <div className='unit-counter-columns container'>
+        <UnitAdvice/>
           <UnitCountersList counters={true}  direct_counters={this.props.unit.direct_counters} tactical_counters={this.props.unit.tactical_counters}/>
           <UnitCountersList counters={false} direct_counters={this.props.unit.direct_countered} tactical_counters={this.props.unit.tactical_countered}/>
         </div>

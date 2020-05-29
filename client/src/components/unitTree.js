@@ -3,9 +3,6 @@ import UnitPicture from './unitPicture.js'
 import UnitName from './unitName.js'
 
 export default class UnitTree extends Component {
-  constructor (props) {
-    super(props)
-  }
 
   render () {
     if (!this.props.tree) return null
