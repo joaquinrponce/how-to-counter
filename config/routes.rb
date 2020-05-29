@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   scope '/api' do
+    get 'units/search', to: 'units#search'
     resources :units
+    resources :civilizations
   end
   
 end

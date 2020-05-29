@@ -5,7 +5,7 @@ export default class UnitName extends Component {
   render () {
     return (
       <UnitID.Consumer>
-        {({id, submit}) => (<div onClick={() => { submit(this.props.id) }} className='unit-name'>
+        {({id, submit}) => (<div onClick={() => { submit(this.props.id, 'unit') }} className='unit-name'>
           {this.props.name}
           </div>)
         }

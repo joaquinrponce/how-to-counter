@@ -15,5 +15,22 @@ class UnitsController < ApiController
                                           }
                               )
   end
-  
+
+  def search
+    @units = Unit.all
+    if search_params[:building]
+      @units = @units.where(building: search_params[:building])
+    end
+    if search_params[:civilization]
+      @units =  @units.includes(:civilizations).where(civilizations: {id: search_params[:civilization]})
+    end
+    render json: @units
+  end
+
+  private
+
+  def search_params
+    params.permit(:civilization, :building)
+  end
+
 end

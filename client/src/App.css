@@ -8,6 +8,11 @@ img {
   margin: 5px;
 }
 
+.search-container {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 
 .unit-info {
   border: 1px solid rgb(225, 225, 225);
@@ -104,6 +109,14 @@ img {
   cursor: pointer;
 }
 
+.unit-individual {
+  flex-direction: row;
+}
+
+.unit-individual .unit-name-picture {
+  flex-grow: 0;
+  min-width: 150px;
+}
 
 .header {
   font-weight: bold;
