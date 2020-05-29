@@ -6,6 +6,7 @@ import UnitName from './unitName.js'
 import UnitPicture from './unitPicture.js'
 import UnitCivilizationsList from './unitCivilizationsList.js'
 import UnitBuilding from './unitBuilding.js'
+import UnitTree from './unitTree.js'
 
 
 export default class UnitDisplay extends Component {
@@ -21,6 +22,7 @@ export default class UnitDisplay extends Component {
           <div className='unit-building-description container'>
           <UnitBuilding building={this.props.unit.building}/>
           <UnitDescription description={this.props.unit.description}/>
+          <UnitTree tree={this.props.unit.upgrade_tree}/>
           </div>
           <UnitStats unit={this.props.unit}/>
         </div>

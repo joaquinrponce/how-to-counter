@@ -14,18 +14,50 @@ civilizations.each do |civ|
   Civilization.create(name: civ, picture_url: url)
 end
 
+skirmisher_tree = UpgradeTree.create(name: 'Skirmisher-line')
+archer_tree = UpgradeTree.create(name: 'Archer-line')
+spearman_tree = UpgradeTree.create(name: 'Spearman-line')
+militia_tree = UpgradeTree.create(name: 'Militia-line')
+knight_tree = UpgradeTree.create(name: 'Knight-line')
+
+skirmisher = Unit.create(
+  name: 'Skirmisher',
+  description: 'An Archer unit with high pierce armor and an attack bonus against Archers and the Spearman line. Has a minimum range and slow attack speed.',
+  building: 'Archery Range',
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Elite+Skirmisher.jpg",
+  upgrade_tree: skirmisher_tree
+)
+
 elite_skirmisher = Unit.create(
   name: 'Elite Skirmisher',
   description: 'An Archer unit with high pierce armor and an attack bonus against Archers and the Spearman line. Has a minimum range and slow attack speed.',
   building: 'Archery Range',
-  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Elite+Skirmisher.jpg"
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Elite+Skirmisher.jpg",
+  upgrade_tree: skirmisher_tree
+)
+
+archer = Unit.create(
+  name: 'Archer',
+  description: 'Main Archer unit. Weak to skirmishers. Good against infantry.',
+  building: 'Archery Range',
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Archer.jpg",
+  upgrade_tree: archer_tree
+)
+
+crossbowman = Unit.create(
+  name: 'Crossbowman',
+  description: 'Main Archer unit. Weak to skirmishers. Good against infantry.',
+  building: 'Archery Range',
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Crossbowman.jpg",
+  upgrade_tree: archer_tree
 )
 
 arbalester = Unit.create(
   name: 'Arbalester',
   description: 'Main Archer unit. Weak to skirmishers. Good against infantry.',
   building: 'Archery Range',
-  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Arbalester.jpg"
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Arbalester.jpg",
+  upgrade_tree: archer_tree
 )
 
 siege_onager= Unit.create(
@@ -35,11 +67,28 @@ siege_onager= Unit.create(
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/workshop/Siege+Onager.jpg"
 )
 
+knight = Unit.create(
+  name: 'Knight',
+  description: 'Powerful heavy cavalry with high HP and armor. Great mobility and strength.',
+  building: 'Stable',
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/stable/Knight.jpg",
+  upgrade_tree: knight_tree
+)
+
+cavalier = Unit.create(
+  name: 'Cavalier',
+  description: 'Powerful heavy cavalry with high HP and armor. Great mobility and strength.',
+  building: 'Stable',
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/stable/Cavalier.jpg",
+  upgrade_tree: knight_tree
+)
+
 paladin = Unit.create(
   name: 'Paladin',
   description: 'Powerful heavy cavalry with high HP and armor. Great mobility and strength.',
   building: 'Stable',
-  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/stable/Paladin.jpg"
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/stable/Paladin.jpg",
+  upgrade_tree: knight_tree
 )
 
 halberdier = Unit.create(
@@ -68,7 +117,15 @@ paladin.direct_counters.create(counter_unit: halberdier, description: "The Halbe
 
 paladin.tactical_counters.create(counter_unit: monk, description: "Monks can easily convert enemy Paladins, which leaves the opponent with one less unit in their army, while having to fight one additional unit. Against large numbers of enemies, Monks are not as effective, and become harder to micro-manage.")
 
+knight.direct_counters.create(counter_unit: halberdier, description: "The Halberdier possesses a strong attack bonus against cavalry, although still losing in a one-to-one fight with a Paladin.")
+
+cavalier.tactical_counters.create(counter_unit: monk, description: "Monks can easily convert enemy Paladins, which leaves the opponent with one less unit in their army, while having to fight one additional unit. Against large numbers of enemies, Monks are not as effective, and become harder to micro-manage.")
+
 arbalester.direct_counters.create(counter_unit: elite_skirmisher, description: "The Elite Skimisher's high pierce armor and attack bonus against Archers makes it a great counter to Arbalesters.")
+
+archer.direct_counters.create(counter_unit: elite_skirmisher, description: "The Elite Skimisher's high pierce armor and attack bonus against Archers makes it a great counter to Arbalesters.")
+
+crossbowman.direct_counters.create(counter_unit: elite_skirmisher, description: "The Elite Skimisher's high pierce armor and attack bonus against Archers makes it a great counter to Arbalesters.")
 
 arbalester.tactical_counters.create(counter_unit: siege_onager, description: "The Siege Onager's high damage area-of-effect attack allows it to easily destroy clumps of ranged units, although untis with higher range or good micro management can still avoid such attacks.")
 
@@ -90,10 +147,19 @@ civs = Civilization.all
 paladin.civilizations = Civilization.where(:name => ['Byzantines', 'Celts', 'Cumans', 'Franks', 'Huns', 'Lithuanians', 'Magyars', 'Persians', 'Spanish', 'Teutons'])
 paladin.save
 
+knight.civilizations = Civilization.where(:name => ['Byzantines', 'Celts', 'Cumans', 'Franks', 'Huns', 'Lithuanians', 'Magyars', 'Persians', 'Spanish', 'Teutons'])
+knight.save
+
+cavalier.civilizations = Civilization.where(:name => ['Byzantines', 'Celts', 'Cumans', 'Franks', 'Huns', 'Lithuanians', 'Magyars', 'Persians', 'Spanish', 'Teutons'])
+cavalier.save
+
 elite_skirmisher.civilizations = Civilization.where.not(:name => ['Turks'])
 elite_skirmisher.save
 
 arbalester.civilizations = Civilization.where(:name => ['Aztecs', 'Britons', 'Byzantines', 'Chinese', 'Ethiopians', 'Incas', 'Italians', 'Japanese', 'Khmer', 'Koreans', 'Magyars', 'Malay', 'Malians', 'Mayans', 'Mongols', 'Portuguese', 'Saracens', 'Vietnamese', 'Vikings'])
+arbalester.save
+
+crossbowman.civilizations = Civilization.where(:name => ['Aztecs', 'Britons', 'Byzantines', 'Chinese', 'Ethiopians', 'Incas', 'Italians', 'Japanese', 'Khmer', 'Koreans', 'Magyars', 'Malay', 'Malians', 'Mayans', 'Mongols', 'Portuguese', 'Saracens', 'Vietnamese', 'Vikings'])
 arbalester.save
 
 halberdier.civilizations = Civilization.where.not(:name => ['Aztecs', 'Berbers', 'Italians', 'Malians', 'Mongols', 'Saracens', 'Turks', 'Vikings'])
@@ -107,6 +173,14 @@ teutonic.save
 
 monk.civilizations = civs
 monk.save
+
+archer.civilizations = civs
+archer.save
+
+skirmisher.civilizations = civs
+skirmisher.save
+
+
 
 
 

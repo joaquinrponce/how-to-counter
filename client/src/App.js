@@ -14,7 +14,6 @@ class App extends Component {
   }
 
   submit(id, info) {
-    console.log(info)
     this.setState({id: id, submit: this.submit, info: info})
   }
 

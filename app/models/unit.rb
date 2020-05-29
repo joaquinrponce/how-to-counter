@@ -12,4 +12,5 @@ class Unit < ApplicationRecord
 
   has_and_belongs_to_many :civilizations
 
+  belongs_to :upgrade_tree, optional: true
 end

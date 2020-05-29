@@ -11,7 +11,8 @@ class UnitsController < ApiController
                                             :tactical_counters => { include: :counter_unit}, 
                                             :direct_countered => { include: :countered_unit }, 
                                             :tactical_countered => { include: :countered_unit }, 
-                                            :civilizations => { } 
+                                            :civilizations => { } ,
+                                            :upgrade_tree => { include: :units }
                                           }
                               )
   end

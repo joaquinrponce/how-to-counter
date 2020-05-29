@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_195119) do
+ActiveRecord::Schema.define(version: 2020_05_29_013443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,14 @@ ActiveRecord::Schema.define(version: 2020_05_27_195119) do
     t.integer "hp"
     t.string "picture_url"
     t.string "building"
+    t.bigint "upgrade_tree_id"
+    t.index ["upgrade_tree_id"], name: "index_units_on_upgrade_tree_id"
+  end
+
+  create_table "upgrade_trees", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

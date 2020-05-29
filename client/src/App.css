@@ -127,6 +127,16 @@ img {
   align-items: center;
 }
 
+.unit-tree-element {
+  flex-direction: row;
+  align-items: center;
+  margin-left: 0;
+}
+
+.unit-tree-element .unit-name {
+  margin-left: 5px;
+}
+
 .header {
   font-weight: bold;
   font-size: 16pt;
