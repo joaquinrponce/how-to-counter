@@ -28,9 +28,7 @@ export default class UnitInfo extends Component {
 
   render () {
     if (!this.state.unit) {
-      return (
-        <div>Loading data...</div>
-      )
+      return null
     } else {
       return (
           <UnitDisplay key={this.state.unit.id} unit={this.state.unit}/>
