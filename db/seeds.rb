@@ -57,7 +57,7 @@ skirmisher = Unit.create(
   name: 'Skirmisher',
   description: 'An Archer unit with high pierce armor and an attack bonus against Archers and the Spearman line. Has a minimum range and slow attack speed.',
   building: 'Archery Range',
-  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Elite+Skirmisher.jpg",
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Skirmisher.jpg",
   upgrade_tree: skirmisher_tree
 )
 
@@ -158,7 +158,7 @@ hand_cannoneer = Unit.create(
   name: 'Hand Cannoneer',
   description: 'Gunpowder Archer unit. Has a heavy attack, large attack bonus against infantry.',
   building: 'Archery Range',
-  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Heavy+Cavalry+Archer.jpg",
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Hand+Cannoneer.jpg",
   hp: 35,
   attack: 17,
   armor: 1,
@@ -166,14 +166,14 @@ hand_cannoneer = Unit.create(
 )
 
 hand_cannoneer.civilizations = Civilization.where(:name => ['Berbers', 'Byzantines', 'Frnaks', 'Goths', 'Indians', 'Italians', 'Japanese', 'Khmer', 'Koreans', 'Lithuanians', 'Malians', 'Persians', 'Portuguese', 'Saracens', 'Spanish', 'Tatars', 'Teutons', 'Turks'])
-
+hand_cannoneer.save
 # barracks
 
 militia = Unit.create(
   name: 'Militia',
   description: 'Cheap and quick-to-train infantry. A very basic military unit.',
   building: 'Barracks',
-  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Crossbowman.jpg",
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Militia.jpg",
   hp: 40,
   attack: 4,
   armor: 0,
@@ -205,7 +205,7 @@ long_swordsman = Unit.create(
   name: 'Long Swordsman',
   description: 'Cheap and quick-to-train infantry. A very basic military unit.',
   building: 'Barracks',
-  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Long+Swordsman.jpg",
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/barracks/Long+Swordsman.jpg",
   hp: 40,
   attack: 9,
   armor: 0,
@@ -221,7 +221,7 @@ twohand_swordsman = Unit.create(
   name: 'Two-Handed Swordsman',
   description: 'Cheap and quick-to-train infantry. A very basic military unit.',
   building: 'Barracks',
-  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Two-Handed+Swordsman.jpg",
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/barracks/Two-Handed+Swordsman.jpg",
   hp: 40,
   attack: 11,
   armor: 0,
@@ -233,10 +233,10 @@ twohand_swordsman.civilizations = Civilization.where.not(:name => ['Persians'])
 twohand_swordsman.save
 
 champion =  Unit.create(
-  name: 'Two-Handed Swordsman',
+  name: 'Champion',
   description: 'Cheap and quick-to-train infantry. A very basic military unit.',
   building: 'Barracks',
-  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/range/Champion.jpg",
+  picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/barracks/Champion.jpg",
   hp: 40,
   attack: 13,
   armor: 1,
@@ -455,7 +455,7 @@ camel.civilizations = Civilization.where(:name => ['Berbers', 'Byzantines', 'Chi
 
 
 heavy_camel = Unit.create(
-  name: 'Camel Rider',
+  name: 'Heavy Camel Rider',
   description: 'A Heavy Cavalry unit specialized to fight Cavalry. Generally weaker than a Knight in other situations.',
   building: 'Stable',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/stable/Heavy+Camel+Rider.jpg",
@@ -487,7 +487,7 @@ battering_ram.civilizations = civs
 battering_ram.save
 
 capped_ram = Unit.create(
-  name: 'Battering Ram',
+  name: 'Capped Ram',
   description: 'A slow-moving siege unit with a powerful attack bonus against buildings. Can garrison military units inside. Takes extra melee damage, but also has extremely high pierce armor.',
   building: 'Siege Workshop',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/workshop/Capped+Ram.jpg",
@@ -503,7 +503,7 @@ capped_ram.civilizations = civs
 capped_ram.save
 
 siege_ram = Unit.create(
-  name: 'Battering Ram',
+  name: 'Siege Ram',
   description: 'A slow-moving siege unit with a powerful attack bonus against buildings. Can garrison military units inside. Takes extra melee damage, but also has extremely high pierce armor.',
   building: 'Siege Workshop',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/workshop/Siege+Ram.jpg",
@@ -532,7 +532,7 @@ mangonel.civilizations = civs
 mangonel.save
 
 onager = Unit.create(
-  name: 'Mangonel',
+  name: 'Onager',
   description: 'A slow-moving siege unit with a minimum range, but powerful area-of-effect attack.',
   building: 'Siege Workshop',
   picture_url: "https://how-to-counter.s3.us-east-2.amazonaws.com/units/workshop/Onager.jpg",
