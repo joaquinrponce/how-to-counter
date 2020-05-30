@@ -43,7 +43,6 @@ export default class UnitListing extends Component {
     if (!this.state.units) {
       return null
     } else {
-      console.log('supposedly rendering something')
       let units = []
       this.state.units.forEach(unit => {
         units.push(
