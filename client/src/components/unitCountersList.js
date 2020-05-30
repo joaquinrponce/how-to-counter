@@ -23,9 +23,9 @@ export default class UnitCountersList extends Component {
     return (
       <div className='unit-counters-list container'>
         <div className='header'>{header}</div>
-        <div className='header-small'>Direct Counters</div>
+        <div className='header-small'>Hard Counters</div>
         <div className='unit-counters'>{this.renderDirectCounters()}</div>
-        <div className='header-small'>Tactical Counters</div>
+        <div className='header-small'>Soft Counters</div>
         <div className='unit-counters'>{this.renderTacticalCounters()}</div>
       </div>
     )
