@@ -1,5 +1,5 @@
 ActiveAdmin.register Civilization do
-  permit_params :name, :picture_url
+  permit_params :name, :picture_url, :unit_ids => []
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -15,4 +15,9 @@ ActiveAdmin.register Civilization do
   #   permitted
   # end
   
+  form do |f|
+    inputs do 
+      f.input :name
+      f.input :picture_url
+      f.input :unit_ids, as: :tags, collection: Unit.all, display_name: :name
 end
