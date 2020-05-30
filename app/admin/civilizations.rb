@@ -20,4 +20,8 @@ ActiveAdmin.register Civilization do
       f.input :name
       f.input :picture_url
       f.input :unit_ids, as: :tags, collection: Unit.all, display_name: :name
+    end
+    f.actions
+  end
+  
 end
