@@ -5,7 +5,7 @@ ActiveAdmin.register UpgradeTree do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :name
+  permit_params :name, :unit_ids => []
   #
   # or
   #
@@ -15,4 +15,12 @@ ActiveAdmin.register UpgradeTree do
   #   permitted
   # end
   
+  form do |f|
+    inputs do
+      f.input :name
+      f.input :unit_ids, as: :tags, collection: Unit.all, display_name: :name
+    end
+    f.actions
+  end
+
 end
