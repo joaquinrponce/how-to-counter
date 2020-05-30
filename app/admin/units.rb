@@ -61,7 +61,7 @@ ActiveAdmin.register Unit do
       f.input :description
       f.input :advice
       f.input :picture_url
-      f.input :building, :label => 'Building', :as => :select, :collection => ['Archery Range', 'Barracks', 'Monastery', 'Siege Workshop', 'Stable']
+      f.input :building, :label => 'Building', :as => :select, :collection => ['Archery Range', 'Barracks', 'Castle', 'Monastery', 'Siege Workshop', 'Stable']
       f.input :upgrade_tree
       f.input :civilization_ids, as: :tags, collection: Civilization.all, display_name: :name
       f.input :attack

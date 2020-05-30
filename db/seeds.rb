@@ -111,7 +111,7 @@ crossbowman = Unit.create(
   upgrade_tree: archer_tree
 )
 
-crossbowman.civilizations = Civilization.where(:name => ['Aztecs', 'Britons', 'Byzantines', 'Chinese', 'Ethiopians', 'Incas', 'Italians', 'Japanese', 'Khmer', 'Koreans', 'Magyars', 'Malay', 'Malians', 'Mayans', 'Mongols', 'Portuguese', 'Saracens', 'Vietnamese', 'Vikings'])
+crossbowman.civilizations = Civilization.where.not(:name => ['Turks', 'Bulgarians'])
 crossbowman.save
 
 
