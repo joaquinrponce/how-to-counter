@@ -74,6 +74,7 @@ img {
   flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .civilization {
@@ -85,9 +86,14 @@ img {
 
 .civilization-name {
   font-size: 8pt;
-  color: rgb(95, 95, 95)
 }
 
+.unit-stats {
+}
+
+.unit-stats span {
+  font-weight: bold;
+}
 
 .unit-counter-columns {
   border: 1px solid rgb(225, 225, 225);
@@ -182,4 +188,26 @@ img {
 .header-small {
   font-weight: bold;
   font-size: 13pt;
+}
+
+@media only screen and (max-width: 1000px) {
+  .unit-info {
+    flex-direction: column;
+  }
+  .unit-counter-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+  .unit-advice {
+    margin-left: 0;
+  }
+  .unit-stats {
+    align-self: flex-start;
+  }
+  .unit-counters-list {
+    width: 100%;
+  }
+  .unit-counters {
+    width: 100%;
+  }
 }

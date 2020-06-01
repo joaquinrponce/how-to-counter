@@ -18,14 +18,14 @@ export default class UnitDisplay extends Component {
             <div className='unit-name-picture'>
               <UnitName name={this.props.unit.name} id={this.props.unit.id}/>
               <UnitPicture size='big' url={this.props.unit.picture_url}/>
+              <UnitStats unit={this.props.unit}/>
             </div>
-          <UnitCivilizationsList civs={this.props.unit.civilizations}/>
           <div className='unit-building-description container'>
           <UnitBuilding building={this.props.unit.building}/>
           <UnitDescription description={this.props.unit.description}/>
           <UnitTree tree={this.props.unit.upgrade_tree}/>
           </div>
-          <UnitStats unit={this.props.unit}/>
+          <UnitCivilizationsList civs={this.props.unit.civilizations}/>
         </div>
         <div className='unit-counter-columns container'>
           <UnitAdvice advice={this.props.unit.advice}/>
