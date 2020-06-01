@@ -88,9 +88,22 @@ img {
   font-size: 8pt;
 }
 
-.unit-stats span {
+
+.unit-stat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.unit-stat img {
+  margin-right: 5px;
+}
+
+.unit-stat span {
+  margin-right: 5px;
   font-weight: bold;
 }
+
 
 .unit-counter-columns {
   border: 1px solid rgb(225, 225, 225);
@@ -196,6 +209,9 @@ img {
     align-items: center;
   }
   .unit-name-picture {
+    width: 100%;
+  }
+  .unit-building-description {
     width: 100%;
   }
   .unit-advice {
