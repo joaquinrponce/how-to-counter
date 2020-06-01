@@ -74,18 +74,19 @@ img {
   flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .civilization {
+  min-width: 120px;
   margin: 0;
   flex-direction: row;
-  min-width: 80px;
   align-items: center;
 }
 
 .civilization-name {
-  font-size: 8pt;
+  font-size: 12pt;
 }
 
 
@@ -225,5 +226,11 @@ img {
   }
   .unit-counters {
     width: 100%;
+  }
+  .civilization {
+    min-width: 90px;
+  }
+  .civilization-name {
+    font-size: 9pt;
   }
 }
