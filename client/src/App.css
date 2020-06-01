@@ -29,7 +29,7 @@ img {
 }
 
 .unit-name-picture {
-  width: 20%;
+  flex: .5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,9 +86,6 @@ img {
 
 .civilization-name {
   font-size: 8pt;
-}
-
-.unit-stats {
 }
 
 .unit-stats span {
@@ -197,6 +194,9 @@ img {
   .unit-counter-columns {
     flex-direction: column;
     align-items: center;
+  }
+  .unit-name-picture {
+    width: 100%;
   }
   .unit-advice {
     margin-left: 0;
