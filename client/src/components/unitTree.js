@@ -8,9 +8,9 @@ export default class UnitTree extends Component {
     if (!this.props.tree) return null
     let units = []
     this.props.tree.units.forEach(unit => {
-      units.push(<div className='unit-tree-element container'>
-        <UnitPicture url={unit.picture_url} size='small'/>
-        <UnitName name={unit.name} id={unit.id}/>
+      units.push(<div key={unit.id} className='unit-tree-element container'>
+        <UnitPicture key={unit.id} url={unit.picture_url} size='small'/>
+        <UnitName key={unit.name} name={unit.name} id={unit.id}/>
       </div>)
     })
     return (

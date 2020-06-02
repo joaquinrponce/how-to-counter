@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Select from 'react-select'
 
 export default class UnitSearch extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {id: null, selectOptions: []}
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)

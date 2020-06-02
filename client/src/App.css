@@ -199,6 +199,18 @@ img {
   font-size: 13pt;
 }
 
+.civ-filter {
+  width: 100%;
+  align-items: center;
+  font-size: 8pt;
+}
+
+.civ-filter-select {
+  width: 40%;
+  font-size: 12pt;
+  transform: scale(0.8)
+}
+
 @media only screen and (max-width: 1000px) {
   .unit-info {
     flex-direction: column;
