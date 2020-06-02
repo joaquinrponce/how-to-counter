@@ -206,9 +206,18 @@ img {
 }
 
 .civ-filter-select {
-  width: 40%;
+  width: 100%;
   font-size: 12pt;
   transform: scale(0.8)
+}
+
+.filters {
+  align-items: center;
+  font-size: 10pt;
+}
+
+.unique-filter {
+  font-size: 8pt;
 }
 
 @media only screen and (max-width: 1000px) {

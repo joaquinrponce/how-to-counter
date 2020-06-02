@@ -8,6 +8,7 @@ export default class UnitCounter extends Component {
     super(props)
     this.state = {collapsed: true}
     this.collapse = this.collapse.bind(this)
+    this.filterCiv = this.filterCiv.bind(this)
   }
 
   collapse() {
@@ -15,8 +16,22 @@ export default class UnitCounter extends Component {
     this.setState({collapsed: collapsed})
   }
 
+  filterCiv(civilizations) {
+    let found = false
+    civilizations.forEach(civ => {
+      if (civ.name === this.props.filters.civ) { 
+        found = true
+        }
+      }
+    )
+    return found
+  }
+
+
   render() {
     let unit = this.props.counter.counter_unit ? this.props.counter.counter_unit : this.props.counter.countered_unit
+    if (this.props.filters.civ && !this.filterCiv(unit.civilizations)) return null
+    if (this.props.filters.unique && unit.unique) return null
     return (
       <div className='unit-counter container'>
         <UnitPicture size='small' url={unit.picture_url}/>
