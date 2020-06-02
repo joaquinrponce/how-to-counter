@@ -40,6 +40,9 @@ export default class UnitCountersList extends Component {
     if (this.props.tactical_counters.length === 0) return null
     let tacticalCounters = []
     this.props.tactical_counters.forEach(counter => {
+      if (this.state.civ && this.props.counters) {
+        if (!this.filterCiv(counter.counter_unit.civilizations)) return null
+      }
       tacticalCounters.push(<UnitCounter key={counter.id} counter={counter}/>)
     })
     return tacticalCounters
