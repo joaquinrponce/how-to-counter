@@ -8,7 +8,7 @@ class UnitsController < ApiController
   def show
     @unit = Unit.find(params[:id])
     render json: @unit.to_json(:include => { :direct_counters => { :include => { :counter_unit => { include: :civilizations } } },
-                                            :tactical_counters => { include: :counter_unit}, 
+                                            :tactical_counters => { :include => { :counter_unit => { include: :civilizations } } }, 
                                             :direct_countered => { include: :countered_unit }, 
                                             :tactical_countered => { include: :countered_unit }, 
                                             :civilizations => { } ,
